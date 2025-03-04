@@ -9,7 +9,12 @@ namespace DependencyInjection.Services
 {
     class NotificationService
     {
-        private readonly IMessageService _messageService = new EmailService();
+        private readonly IMessageService _messageService;
+
+        public NotificationService(IMessageService messageService)
+        {
+            _messageService = messageService;
+        }
         public void Notify() 
         {
             _messageService.SendMessage();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjection.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.Services
 {
-    class EmailService
+    class EmailService: IMessageService
     {
-        public void sendMessage() 
+        public void SendMessage() 
         {
             Console.WriteLine("Email: notification");
         }
